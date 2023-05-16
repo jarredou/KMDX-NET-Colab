@@ -182,9 +182,9 @@ class MusicSeparationModel:
             pbar.update(10)
             sources5 = apply_model(self.demucs5, mix[None], split=True, shifts=0, overlap=0.85, device=torch.device('cuda'))[0]
             pbar.update(10)
-            sources6 = apply_model(self.demucs6, mix[None], split=True, shifts=0, overlap=0.85, device=torch.device('cuda'))[0]
+            sources6 = apply_model(self.demucs6, mix[None], split=True, shifts=0, overlap=0.8, device=torch.device('cuda'))[0]
             pbar.update(10)
-            sources7 = apply_model(self.demucs2, mix[None], split=True, shifts=0, overlap=0.85, device=torch.device('cuda'))[0]
+            sources7 = apply_model(self.demucs2, mix[None], split=True, shifts=0, overlap=0.8, device=torch.device('cuda'))[0]
             pbar.update(10)
             vocalss = sources5[self.demucs_instruments.index('vocals')]
             pbar.update(10)
