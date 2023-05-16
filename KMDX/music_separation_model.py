@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 device = torch.device('cuda')
 
-model_path = 'my_submission/model_weights'
+model_path = 'KMDX/model_weights'
 
 # enable onnx acceleration 
 use_onnx = True    
@@ -39,17 +39,17 @@ class MusicSeparationModel:
             self.blend_weights = blend_weights
             self.demucs_instruments = ["drums", "bass", "other", "vocals"]
             self.demucs1 = HTDemucs(sources=self.demucs_instruments, bottom_channels=512, dconv_mode=3, segment=7.8).eval()
-            self.demucs1.load_state_dict(torch.load(f'my_submission/model_weights/demucs_drums.ckpt')['state'], strict=False)  
+            self.demucs1.load_state_dict(torch.load(f'KMDX/model_weights/demucs_drums.ckpt')['state'], strict=False)  
             self.demucs2 = HTDemucs(sources=self.demucs_instruments, bottom_channels=512, dconv_mode=3, segment=7.8).eval()
-            self.demucs2.load_state_dict(torch.load(f'my_submission/model_weights/demucs_bass.ckpt')['state'], strict=False)
+            self.demucs2.load_state_dict(torch.load(f'KMDX/model_weights/demucs_bass.ckpt')['state'], strict=False)
             self.demucs3 = HTDemucs(sources=self.demucs_instruments, bottom_channels=512, dconv_mode=3, segment=7.8).eval()
-            self.demucs3.load_state_dict(torch.load(f'my_submission/model_weights/demucs_other.ckpt')['state'], strict=False)
+            self.demucs3.load_state_dict(torch.load(f'KMDX/model_weights/demucs_other.ckpt')['state'], strict=False)
             self.demucs4 = HTDemucs(sources=self.demucs_instruments, bottom_channels=512, dconv_mode=3, segment=7.7).eval()
-            self.demucs4.load_state_dict(torch.load(f'my_submission/model_weights/demucs_vocals.ckpt')['state'], strict=False) 
+            self.demucs4.load_state_dict(torch.load(f'KMDX/model_weights/demucs_vocals.ckpt')['state'], strict=False) 
             self.demucs5 = HDemucs(sources=self.demucs_instruments, channels=48, segment=44).eval()
-            self.demucs5.load_state_dict(torch.load(f'my_submission/model_weights/demucs_mmi.ckpt')['state'], strict=False)
+            self.demucs5.load_state_dict(torch.load(f'KMDX/model_weights/demucs_mmi.ckpt')['state'], strict=False)
             self.demucs6 = HDemucs(sources=self.demucs_instruments, channels=48, hybrid_old=True, cac=False).eval()
-            self.demucs6.load_state_dict(torch.load(f'my_submission/model_weights/demucstracktwo.ckpt')['state'], strict=False)
+            self.demucs6.load_state_dict(torch.load(f'KMDX/model_weights/demucstracktwo.ckpt')['state'], strict=False)
      
         
     @property
