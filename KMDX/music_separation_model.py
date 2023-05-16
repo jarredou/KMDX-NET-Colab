@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 import time
-from my_submission.models import get_models
+from KMDX.models import get_models
 from demucs.htdemucs import HTDemucs
 from demucs.hdemucs import HDemucs
 from demucs import pretrained
