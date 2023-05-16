@@ -1,5 +1,3 @@
-## DO NOT CHANGE THIS FILE
-
 import os
 import numpy as np
 import soundfile
@@ -9,7 +7,7 @@ import os
 
 import pathlib
 
-from my_submission.music_separation_model import MusicSeparationModel
+from KMDX.music_separation_model import MusicSeparationModel
 
 MySeparationModel = MusicSeparationModel
 
